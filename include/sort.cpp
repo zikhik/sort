@@ -20,12 +20,12 @@ struct line
 
 bool operator < (const line& line1, const line& line2)
 {
-	return (line1.name < line2.name);
+	return (line1.surname < line2.surname);
 }
 
 bool operator >(const line& line1, const line& line2)
 {
-	return (line1.name > line2.name);
+	return (line1.surname > line2.surname);
 }
 
 ostream & operator<<(ostream & output, line const & str)
@@ -67,7 +67,7 @@ void sortirovka(const string input_name, const string output_name, const short m
 	{
 		vector<line> v; line s;
 		ofstream fout_(to_string(k + 1));
-		for (unsigned long int size = 0; (size + 50) < mem_size * 1024 * 1024 * 0.52;)
+		for (unsigned long int size = 0; (size + 50) < mem_size * 1024 * 1024 * 0.62;)
 		{
 			if (!fin.eof() && (fin >> s) && (s != ""))  v.push_back(s);
 			size += s.size();
